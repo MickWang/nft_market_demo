@@ -26,21 +26,22 @@ const config: HardhatUserConfig = {
   solidity: {
     compilers: [
       {
-        version: '0.8.4',
+        version: "0.8.4",
         settings: {
           optimizer: {
             enabled: true,
-            runs: 200
-          }
-        }
+            runs: 200,
+          },
+        },
       },
-    ]
+    ],
   },
   networks: {
-    ropsten: {
-      url: process.env.ROPSTEN_URL || "",
-      accounts:
-        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    goerli: {
+      // Ankr's Public RPC URL
+      url: "https://rpc.ankr.com/eth_goerli",
+      // PRIVATE_KEY loaded from .env file
+      accounts: [`0x${process.env.PRIVATE_KEY}`],
     },
   },
   gasReporter: {

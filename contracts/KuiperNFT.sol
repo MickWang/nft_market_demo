@@ -31,6 +31,10 @@ contract KuiperNFT is ERC721, ERC721URIStorage, ERC721Burnable, Ownable {
         transferOwnership(_owner);
     }
 
+    function supportsInterface(bytes4 interfaceId) public view virtual override(ERC721, ERC721URIStorage) returns (bool) {
+        return super.supportsInterface(interfaceId);
+    }
+
     function safeMint(address to, string memory uri) public onlyOwner {
         uint256 tokenId = _tokenIdCounter.current();
         _tokenIdCounter.increment();
