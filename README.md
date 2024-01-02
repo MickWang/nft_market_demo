@@ -34,3 +34,98 @@ npx hardhat run scripts/deploy.ts --network <network>
 ```bash
 npx hardhat test test/kuiper.ts --network <network>
 ```
+
+## Marketplace Interafce
+
+1. List NFT on the marketplace.
+
+```
+{
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_nft",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_payToken",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_price",
+          "type": "uint256"
+        }
+      ],
+      "name": "listNft",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+```
+
+2. Make offer
+   ```
+       {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_nft",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_payToken",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_offerPrice",
+          "type": "uint256"
+        }
+      ],
+      "name": "offerNFT",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+   ```
+   
+3. Accept offer
+```
+{
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_nft",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_offerer",
+          "type": "address"
+        }
+      ],
+      "name": "acceptOfferNFT",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+```
+
